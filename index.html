@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Pamet ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .red {
+            color: #e50914;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* =========================
+           OPENING
+        ========================= */
+
+        #opening {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at center, #300000 0%, #090909 45%, #000 100%);
+            overflow: hidden;
+        }
+
+        .web {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+            animation: spin 25s linear infinite;
+        }
+
+        .web::before,
+        .web::after {
+            content: "";
+            position: absolute;
+            inset: 50px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 50%;
+        }
+
+        .web::after {
+            inset: 120px;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .opening-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-text {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .opening-content h1 {
+            font-size: clamp(55px, 12vw, 110px);
+            line-height: 0.9;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow:
+                5px 5px 0 #e50914,
+                10px 10px 25px rgba(229,9,20,0.3);
+        }
+
+        .opening-content h2 {
+            margin-top: 20px;
+            font-size: clamp(25px, 6vw, 55px);
+        }
+
+        .opening-content p {
+            color: #bbb;
+            margin: 25px auto;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .open-btn {
+            margin-top: 20px;
+            padding: 16px 35px;
+            color: white;
+            background: #e50914;
+            border-radius: 4px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            box-shadow: 0 0 25px rgba(229,9,20,0.3);
+        }
+
+        .open-btn:hover {
+            transform: scale(1.05);
+            background: #ff1823;
+            box-shadow: 0 0 40px rgba(229,9,20,0.6);
+        }
+
+        /* =========================
+           BIRTHDAY
+        ========================= */
+
+        #birthday {
+            background:
+                linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.95)),
+                radial-gradient(circle, #400000, #000 70%);
+        }
+
+        .birthday-title {
+            font-size: clamp(40px, 8vw, 85px);
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .birthday-title span {
+            color: #e50914;
+        }
+
+        .age {
+            font-size: 100px;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 2px #e50914;
+            margin: 15px 0;
+        }
+
+        .birthday-text {
+            max-width: 650px;
+            margin: 25px auto;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           PHOTO
+        ========================= */
+
+        #memories {
+            background: #080808;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .photo {
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            background:
+                linear-gradient(135deg, #250000, #111);
+            border: 1px solid #292929;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #777;
+        }
+
+        .photo-placeholder strong {
+            color: #e50914;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           LETTER
+        ========================= */
+
+        #letter {
+            background:
+                radial-gradient(circle at top, #250000, #050505 60%);
+        }
+
+        .letter-box {
+            max-width: 750px;
+            background: #101010;
+            padding: 45px;
+            border: 1px solid #292929;
+            border-left: 4px solid #e50914;
+            text-align: left;
+            box-shadow: 0 20px 50px rgba(0,0,0,.5);
+        }
+
+        .letter-box h2 {
+            margin-bottom: 30px;
+            color: #e50914;
+        }
+
+        .letter-box p {
+            color: #ddd;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 35px;
+            color: #e50914 !important;
+            font-weight: bold;
+        }
+
+        /* =========================
+           MUSIC
+        ========================= */
+
+        #music {
+            min-height: 60vh;
+            background: #030303;
+        }
+
+        .music-card {
+            border: 1px solid #292929;
+            padding: 40px 25px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .music-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .music-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .music-card p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .music-btn {
+            background: transparent;
+            border: 1px solid #e50914;
+            color: #e50914;
+            padding: 13px 25px;
+            border-radius: 4px;
+        }
+
+        .music-btn:hover {
+            background: #e50914;
+            color: white;
+        }
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        #final {
+            background:
+                radial-gradient(circle, #450000 0%, #080000 35%, #000 75%);
+        }
+
+        .final-content h1 {
+            font-size: clamp(45px, 10vw, 100px);
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .final-content h1 span {
+            color: #e50914;
+            display: block;
+        }
+
+        .final-content p {
+            color: #aaa;
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+
+        .love {
+            margin-top: 45px;
+            font-size: 22px;
+            color: #e50914;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        .confetti {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            top: -10px;
+            z-index: 9999;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo {
+                height: 330px;
+            }
+
+            .letter-box {
+                padding: 30px 22px;
+            }
+
+            .web {
+                width: 350px;
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         OPENING
+    ========================= -->
+
+    <section id="opening">
+
+        <div class="web"></div>
+
+        <div class="container opening-content">
+
+            <div class="small-text">
+                a little something for you
+            </div>
+
+            <h1>
+                Happy<br>
+                <span class="red">Birthday</span>
+            </h1>
+
+            <h2>Pamet ❤️</h2>
+
+            <p>
+                Aku bikin sesuatu kecil buat seseorang
+                yang berarti besar buat aku.
+            </p>
+
+            <button class="open-btn" onclick="openGift()">
+                BUKA HADIAH 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY
+    ========================= -->
+
+    <section id="birthday">
+
+        <div class="container">
+
+            <div class="small-text">
+                18 September 2026
+            </div>
+
+            <h1 class="birthday-title">
+                Happy Birthday
+                <span>Pamet</span>
+            </h1>
+
+            <div class="age">
+                21
+            </div>
+
+            <p class="birthday-text">
+
+                Selamat ulang tahun yang ke-21, Pamet ❤️
+
+                Semoga di umur yang baru ini,
+                semua hal baik datang satu-satu ke kamu.
+                Semoga kamu selalu sehat,
+                dimudahkan dalam setiap urusan,
+                dan tetap jadi kamu yang aku kenal.
+
+                <br><br>
+
+                Dan semoga...
+                aku masih boleh jadi salah satu orang
+                yang nemenin perjalanan kamu
+                di tahun-tahun berikutnya.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================= -->
+
+    <section id="memories">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                OUR <span class="red">MEMORIES</span>
+            </h2>
+
+            <p class="section-subtitle">
+                beberapa momen yang aku simpan ❤️
+            </p>
+
+            <div class="photo-grid">
+
+                <!-- FOTO 1 -->
+                <div class="photo">
+
+                    <!--
+                    GANTI DENGAN:
+                    <img src="foto1.jpg">
+                    -->
+
+                    <div class="photo-placeholder">
+                        <strong>01</strong>
+                        <span>foto kita nanti 📸</span>
+                    </div>
+
+                </div>
+
+
+                <!-- FOTO 2 -->
+                <div class="photo">
+
+                    <div class="photo-placeholder">
+                        <strong>02</strong>
+                        <span>foto kita nanti 📸</span>
+                    </div>
+
+                </div>
+
+
+                <!-- FOTO 3 -->
+                <div class="photo">
+
+                    <div class="photo-placeholder">
+                        <strong>03</strong>
+                        <span>foto kita nanti 📸</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LETTER
+    ========================= -->
+
+    <section id="letter">
+
+        <div class="container">
+
+            <div class="letter-box">
+
+                <h2>
+                    Dear Pamet,
+                </h2>
+
+                <p>
+                    Happy birthday yaaa ❤️
+                </p>
+
+                <p>
+                    Nggak kerasa sekarang kamu udah 21 tahun.
+                    Semoga bertambahnya umur bukan cuma bikin
+                    angka kamu bertambah, tapi juga bikin
+                    kamu semakin dekat sama semua hal yang
+                    kamu impikan.
+                </p>
+
+                <p>
+                    Aku mungkin nggak selalu bisa kasih sesuatu
+                    yang besar atau mahal. Tapi kali ini aku
+                    pengen bikin sesuatu yang bisa kamu buka
+                    dan kamu ingat kalau ada seseorang yang
+                    benar-benar senang bisa kenal sama kamu.
+                </p>
+
+                <p>
+                    Terima kasih udah jadi bagian dari cerita
+                    aku selama ini. Terima kasih untuk semua
+                    waktu, cerita, ketawa, kesel, dan hal-hal
+                    kecil yang mungkin kelihatannya biasa,
+                    tapi sebenarnya aku simpan.
+                </p>
+
+                <p>
+                    Aku nggak tahu nanti perjalanan kita
+                    bakal sejauh apa. Tapi untuk sekarang,
+                    aku cuma mau bilang:
+                    aku bersyukur pernah, sedang, dan masih
+                    bisa menjalani banyak hal bareng kamu.
+                </p>
+
+                <p>
+                    Semoga kamu selalu punya alasan buat
+                    tersenyum. Jangan lupa jaga diri,
+                    jangan terlalu keras sama diri sendiri,
+                    dan kalau suatu hari semuanya terasa berat,
+                    semoga kamu ingat kalau kamu nggak sendirian.
+                </p>
+
+                <p>
+                    Sekali lagi, happy birthday, Pamet.
+                    Semoga 21 menjadi tahun yang baik buat kamu.
+                </p>
+
+                <p class="signature">
+                    Love you, sengkyuuu ❤️<br>
+                    — Dini
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MUSIC
+    ========================= -->
+
+    <section id="music">
+
+        <div class="container">
+
+            <div class="music-card">
+
+                <div class="music-icon">
+                    🎵
+                </div>
+
+                <h2>
+                    One Song For You
+                </h2>
+
+                <p>
+                    Dewa — Satu
+                </p>
+
+                <!--
+                TARUH FILE:
+                satu.mp3
+
+                di folder yang sama dengan index.html
+                -->
+
+                <audio id="song">
+                    <source src="satu.mp3" type="audio/mpeg">
+                </audio>
+
+                <button class="music-btn" onclick="toggleMusic()">
+                    ▶ PLAY SONG
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <section id="final">
+
+        <div class="container final-content">
+
+            <div class="small-text">
+                one last thing...
+            </div>
+
+            <h1>
+                I LOVE
+                <span>YOU.</span>
+            </h1>
+
+            <p>
+                Happy 21st Birthday, Pamet.
+                <br>
+                Semoga semua doa baik menemukan jalannya
+                untuk sampai ke kamu.
+            </p>
+
+            <div class="love">
+                love you sengkyuuu ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        /* =========================
+           OPEN GIFT
+        ========================= */
+
+        function openGift() {
+
+            createConfetti();
+
+            document.getElementById("birthday")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        /* =========================
+           MUSIC
+        ========================= */
+
+        const song = document.getElementById("song");
+
+        function toggleMusic() {
+
+            const button = document.querySelector(".music-btn");
+
+            if (song.paused) {
+
+                song.play();
+
+                button.innerHTML = "⏸ PAUSE SONG";
+
+            } else {
+
+                song.pause();
+
+                button.innerHTML = "▶ PLAY SONG";
+
+            }
+
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        function createConfetti() {
+
+            for (let i = 0; i < 100; i++) {
+
+                const confetti =
+                    document.createElement("div");
+
+                confetti.classList.add("confetti");
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.animationDuration =
+                    (Math.random() * 3 + 2) + "s";
+
+                confetti.style.background =
+                    Math.random() > 0.5
+                    ? "#e50914"
+                    : "#ffffff";
+
+                confetti.style.transform =
+                    `rotate(${Math.random() * 360}deg)`;
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
