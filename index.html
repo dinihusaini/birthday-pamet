@@ -55,6 +55,78 @@
         }
 
         /* =========================
+           SPIDER-MAN FLYING
+        ========================= */
+        
+        .spiderman-flying {
+            position: fixed;
+            width: 180px;
+            z-index: 999;
+            pointer-events: none;
+        
+            top: 12%;
+            left: -250px;
+        
+            animation: spidermanFly 10s linear infinite;
+        }
+        
+        .spiderman-flying img {
+            width: 100%;
+            height: auto;
+            display: block;
+        
+            filter: drop-shadow(0 10px 12px rgba(0,0,0,0.5));
+        }
+        
+        
+        /* GERAK TERBANG MENYILANG */
+        
+        @keyframes spidermanFly {
+        
+            0% {
+                left: -250px;
+                top: 15%;
+                transform: rotate(-10deg) scale(0.8);
+            }
+        
+            15% {
+                left: 10%;
+                top: 8%;
+                transform: rotate(5deg) scale(0.9);
+            }
+        
+            30% {
+                left: 35%;
+                top: 20%;
+                transform: rotate(12deg) scale(1);
+            }
+        
+            45% {
+                left: 60%;
+                top: 8%;
+                transform: rotate(-5deg) scale(1.05);
+            }
+        
+            60% {
+                left: 82%;
+                top: 22%;
+                transform: rotate(10deg) scale(0.95);
+            }
+        
+            75% {
+                left: 105%;
+                top: 10%;
+                transform: rotate(-8deg) scale(0.85);
+            }
+        
+            100% {
+                left: 120%;
+                top: 25%;
+                transform: rotate(10deg) scale(0.7);
+            }
+        }
+
+        /* =========================
            OPENING
         ========================= */
 
@@ -403,6 +475,11 @@
 </head>
 
 <body>
+
+    <!-- SPIDER-MAN FLYING -->
+    <div class="spiderman-flying">
+        <img src="spiderman.png" alt="Spider-Man">
+    </div>
 
     <!-- =========================
          OPENING
